@@ -1,0 +1,1084 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Midnight na Prática · Workshop · Web3Experts 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div id="stage">
+  <div id="deck">
+    <!-- ===================== SLIDES ===================== -->
+    <!-- SLIDE 1 -->
+    <section class="slide title-slide" data-part="Capa">
+      <div class="bg-eclipse"></div>
+      <img class="title-logo" src="assets/Midnight-RGB_Logo-Horizontal-White@2x.png" alt="Midnight">
+      <div class="frame">
+        <div class="spacer"></div>
+        <h1 class="title" style="font-size:100px">Midnight na Prática</h1>
+        <p class="lead" style="margin-top:22px; font-size:42px">Casos de Uso, Arquitetura e Construção de dApps</p>
+        <div class="presenters">
+          <div class="presenter"><img src="assets/taina-photo.png" alt="Tainá Bugs"><div><div class="nm">Tainá Bugs</div><div class="rl">Aliit Fellow · Midnight</div></div></div>
+          <div class="presenter"><img src="assets/erick-pic.png" alt="Erick Romero"><div><div class="nm">Erick Romero</div><div class="rl">Aliit Fellow · Midnight</div></div></div>
+        </div>
+        <div class="spacer"></div>
+      </div>
+      <div class="title-foot">Web3Experts Brazil 2026 · Workshop</div>
+    </section>
+
+    <!-- SLIDE 2 -->
+    <section class="slide" data-part="Parte A · Bloco 0">
+      <div class="bg-eclipse"></div>
+      <div class="frame center statement">
+        <div class="stmt">Privacidade nos seus apps <span class="soft">sem virar criptógrafo.</span></div>
+        <p class="lead">Você escreve código familiar. A criptografia complexa fica nos bastidores.</p>
+      </div>
+    </section>
+
+    <!-- SLIDE 3 -->
+    <section class="slide" data-part="Parte A · Bloco 0">
+      <div class="hairline"></div>
+      <div class="progress">Parte A · Bloco 0</div>
+      <div class="frame">
+        <div class="eyebrow">O formato</div>
+        <div class="fmt-cards">
+          <div class="fmt-card">
+            <div class="fmt-top"><span class="fmt-letter">A</span><span class="fmt-dur">~35 min</span></div>
+            <div class="fmt-title">Teoria leve + casos de uso</div>
+            <div class="fmt-desc">por quê, o quê, e o modelo mental</div>
+          </div>
+          <div class="fmt-card glow">
+            <div class="fmt-top"><span class="fmt-letter">B</span><span class="fmt-dur">~85 min</span></div>
+            <div class="fmt-title">Os repos e os contratos</div>
+            <div class="fmt-desc">código de verdade, lido e rodado na tela</div>
+          </div>
+        </div>
+        <div class="fmt-bar">
+          <div class="fmt-seg a" style="flex:35"><span>Parte A · teoria</span></div>
+          <div class="fmt-seg b" style="flex:85"><span>Parte B · mão na massa</span></div>
+        </div>
+        <p class="lead">Trouxe notebook? Dá pra acompanhar junto. Não trouxe? Funciona igual.</p>
+      </div>
+    </section>
+
+    <!-- SLIDE 4 -->
+    <section class="slide" data-part="Parte A · Bloco 1">
+      <div class="hairline"></div>
+      <div class="progress">Parte A · Bloco 1</div>
+      <div class="frame center">
+        <div class="circle-row">
+          <div class="circle"><div class="t">Transparente, mas exposto</div></div>
+          <div class="circle"><div class="t">Privado, mas opaco</div></div>
+        </div>
+        <p class="lead" style="margin-top:64px; max-width:1280px">A escolha que blockchain te obriga a fazer hoje. Nenhuma das duas serve.</p>
+      </div>
+    </section>
+
+    <!-- SLIDE 5 -->
+    <section class="slide" data-part="Parte A · Bloco 1">
+      <div class="hairline"></div>
+      <div class="progress">Parte A · Bloco 1</div>
+      <div class="frame">
+        <h2 class="head">O custo real</h2>
+        <div class="stats3">
+          <div class="stat"><div class="n">US$ 4,88M</div><div class="v">custo médio de um data breach (2024)</div></div>
+          <div class="stat"><div class="n">38 TB</div><div class="v">dados privados expostos pela Microsoft AI (2023)</div></div>
+          <div class="stat"><div class="n">US$ 2,1B</div><div class="v">multas de privacidade na UE</div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 6 -->
+    <section class="slide" data-part="Parte A · Bloco 1">
+      <div class="hairline"></div>
+      <div class="progress">Parte A · Bloco 1</div>
+      <div class="frame">
+        <div class="eyebrow">Casos de uso</div>
+        <h2 class="head" style="margin-top:12px">Privacidade cabe em quase tudo</h2>
+        <div class="mural">
+          <div class="mural-col">
+            <div class="mural-head">Finanças</div>
+            <div class="mural-item">negociar grande sem mover o preço</div>
+            <div class="mural-item">provar solvência sem abrir a carteira</div>
+            <div class="mural-item">transferir sem expor valor e destino</div>
+          </div>
+          <div class="mural-col">
+            <div class="mural-head">Saúde</div>
+            <div class="mural-item">provar elegibilidade sem abrir o prontuário</div>
+            <div class="mural-item">entrar em pesquisa sem se identificar</div>
+            <div class="mural-item">trocar dado clínico sem vazar o paciente</div>
+          </div>
+          <div class="mural-col">
+            <div class="mural-head">Governança</div>
+            <div class="mural-item">votar sem revelar o voto</div>
+            <div class="mural-item">denunciar sem se expor</div>
+            <div class="mural-item">licitar sem brecha pra fraude</div>
+          </div>
+          <div class="mural-col">
+            <div class="mural-head">IA</div>
+            <div class="mural-item">treinar modelo sem ver os dados</div>
+            <div class="mural-item">agentes negociando sem vazar estratégia</div>
+            <div class="mural-item">vender dado provando a qualidade</div>
+          </div>
+        </div>
+        <p class="small mural-note">exemplos reais, não uma lista fechada: onde existe dado sensível, cabe um app Midnight.</p>
+      </div>
+    </section>
+
+    <!-- SLIDE 7 -->
+    <section class="slide" data-part="Parte A · Bloco 1">
+      <div class="hairline"></div>
+      <div class="progress">Parte A · Bloco 1</div>
+      <div class="frame">
+        <div class="city-row">
+          <div class="city-left">
+            <div class="eyebrow">Agentes</div>
+            <h2 class="head" style="margin-top:16px; font-size:60px">Agentes autônomos, vivendo on-chain</h2>
+            <p class="body" style="margin-top:24px">Uma cidade de agentes de IA que transacionam, com identidade e privacidade própria, rodando na Midnight.</p>
+            <p class="body" style="margin-top:18px">O futuro de muitas apps não é humano clicando, e sim agente negociando com agente. E agente também precisa de privacidade.</p>
+            <div class="city-tag"><span class="dot"></span><span class="lbl">midnight.city</span></div>
+          </div>
+          <div class="city-art">
+            <video class="city-video" src="assets/midnight-city.mp4" autoplay muted loop playsinline preload="auto"></video>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 8 -->
+    <section class="slide" data-part="Parte A · Bloco 1">
+      <div class="hairline"></div>
+      <div class="progress">Parte A · Bloco 1</div>
+      <div class="frame">
+        <div class="eyebrow">Quer mais ideias?</div>
+        <h2 class="head" style="margin-top:14px">Um catálogo vivo de casos de uso</h2>
+        <div class="qr-row" style="margin-top:48px">
+          <div class="qr-item">
+            <div class="qr-card"><img src="assets/qr-rfs.png" alt="QR Request for Startups"></div>
+            <div class="qr-meta">
+              <div class="n">Request for Startups</div>
+              <div class="d">~130 ideias reais de dApp: de DEX a saúde, governo e IA, atualizado pela Midnight</div>
+              <div class="res-url">midnight.network/request-for-start-ups</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 9 -->
+    <section class="slide" data-part="Parte A · Bloco 2">
+      <div class="hairline"></div>
+      <div class="progress">Parte A · Bloco 2</div>
+      <div class="frame">
+        <div class="eyebrow">ZK sem dor</div>
+        <h2 class="head" style="margin-top:12px">Você prova que tem +18. <span style="color:rgba(255,255,255,0.62); font-weight:400">Sem mostrar o RG.</span></h2>
+        <div class="zk-flow">
+          <div class="zk-card">
+            <div class="zk-card-h">Seu RG · fica com você</div>
+            <div class="zk-field">Nome <span>oculto</span></div>
+            <div class="zk-field">Data de nascimento <span>oculto</span></div>
+            <div class="zk-field">Endereço <span>oculto</span></div>
+            <div class="zk-field">Foto <span>oculto</span></div>
+          </div>
+          <div class="zk-arrow">
+            <div class="zk-arrow-lab">ZK proof</div>
+            <svg viewBox="0 0 130 40" xmlns="http://www.w3.org/2000/svg"><line x1="4" y1="20" x2="108" y2="20" stroke="var(--accent-2)" stroke-width="3"/><path d="M104 9 L126 20 L104 31" fill="none" stroke="var(--accent-2)" stroke-width="3" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="zk-out">
+            <div class="zk-check">✓</div>
+            <div class="zk-out-t">pode comprar</div>
+            <div class="zk-out-s">o caixa não vê mais nada</div>
+          </div>
+        </div>
+        <p class="lead">prova de que a regra foi cumprida, sem entregar os dados que a cumpriram.</p>
+      </div>
+    </section>
+
+    <!-- SLIDE 10 -->
+    <section class="slide" data-part="Parte A · Bloco 2">
+      <div class="hairline"></div>
+      <div class="progress">Parte A · Bloco 2</div>
+      <div class="frame">
+        <div class="eyebrow">O modelo mental</div>
+        <h2 class="head" style="margin-top:12px">Privado de um lado, público do outro</h2>
+        <div class="splitmatrix" style="margin-top:56px">
+          <div class="sm-corner"></div>
+          <div class="sm-colh priv">PRIVADO · sua máquina</div>
+          <div class="sm-colh pub">PÚBLICO · a chain</div>
+
+          <div class="sm-rowh">ESTADO<span>onde o dado mora</span></div>
+          <div class="sm-cell priv">existe só na sua máquina. Mais ninguém enxerga.</div>
+          <div class="sm-cell pub">fica na chain, à vista de todo mundo.</div>
+
+          <div class="sm-rowh">COMPUTAÇÃO<span>onde roda</span></div>
+          <div class="sm-cell priv">seu código roda aqui, antes de qualquer coisa ir pra chain.</div>
+          <div class="sm-cell pub">confere a prova e registra o que ficou público. <b>nunca roda o seu código.</b></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 11 -->
+    <section class="slide" data-part="Parte A · Bloco 2">
+      <div class="hairline"></div>
+      <div class="progress">Parte A · Bloco 2</div>
+      <div class="frame">
+        <h2 class="head">A chain verifica. Ela não executa.</h2>
+        <div class="dc-flow">
+          <div class="dc-panel dc-private">
+            <div class="dc-hd"><span class="dc-ico"></span> SUA MÁQUINA <span class="dc-tag">privado</span></div>
+            <div class="dc-state">estado privado</div>
+            <div class="dc-steps">
+              <div class="dc-step"><span class="dc-n">1</span> roda o seu código aqui</div>
+              <div class="dc-step"><span class="dc-n">2</span> gera a prova de que seguiu as regras</div>
+            </div>
+          </div>
+          <div class="dc-mid">
+            <div class="dc-mlabel">a prova<br>+ o resultado público</div>
+            <svg class="dc-arrow" viewBox="0 0 160 36" fill="none"><line x1="2" y1="18" x2="138" y2="18" stroke="#5570FF" stroke-width="3"/><path d="M158 18 L136 7 L136 29 Z" fill="#5570FF"/></svg>
+            <div class="dc-msub">a única coisa que cruza</div>
+          </div>
+          <div class="dc-panel">
+            <div class="dc-hd"><span class="dc-ico"></span> A CHAIN <span class="dc-tag">público</span></div>
+            <div class="dc-state">estado público</div>
+            <div class="dc-steps">
+              <div class="dc-step ok"><span class="dc-c">✓</span> verifica a prova</div>
+              <div class="dc-step ok"><span class="dc-c">✓</span> registra o que ficou público</div>
+              <div class="dc-step no"><span class="dc-c">✗</span> não roda o seu código</div>
+            </div>
+          </div>
+        </div>
+        <div class="dc-barrier"><span>seu estado privado <b>NUNCA</b> cruza essa linha</span></div>
+      </div>
+    </section>
+
+    <!-- SLIDE 12 -->
+    <section class="slide" data-part="Parte A · Bloco 2">
+      <div class="hairline"></div>
+      <div class="progress">Parte A · Bloco 2</div>
+      <div class="frame">
+        <div class="eyebrow">Os dois tokens</div>
+        <h2 class="head" style="margin-top:12px; font-size:56px">NIGHT gera DUST. DUST paga as taxas.</h2>
+        <div class="nd-flow">
+          <div class="nd-token night">
+            <div class="nd-coin">NIGHT</div>
+            <div class="nd-role">o ativo que você segura</div>
+            <div class="nd-sub">escasso · transferível<br>governa a rede</div>
+          </div>
+          <div class="nd-arrow">
+            <div class="nd-arrow-lab">GERA</div>
+            <svg viewBox="0 0 180 64" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="118" cy="14" r="4" fill="#fff" opacity="0.9"/>
+              <circle cx="138" cy="23" r="3" fill="#fff" opacity="0.65"/>
+              <circle cx="152" cy="11" r="2.5" fill="#fff" opacity="0.5"/>
+              <line x1="4" y1="44" x2="150" y2="44" stroke="#5570FF" stroke-width="3"/>
+              <path d="M148 34 L172 44 L148 54" fill="none" stroke="#5570FF" stroke-width="3" stroke-linejoin="round"/>
+            </svg>
+            <div class="nd-arrow-sub">só por você segurar</div>
+          </div>
+          <div class="nd-token dust">
+            <div class="nd-coin">DUST</div>
+            <div class="nd-role">o combustível das transações</div>
+            <div class="nd-sub">paga as taxas · se renova<br>não transfere</div>
+          </div>
+        </div>
+        <div class="nd-note">
+          <p>Você não queima o ativo pra transacionar, e o gasto de DUST fica <b>desacoplado do seu saldo</b>.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 13 -->
+    <section class="slide" data-part="Parte B · Bloco 3">
+      <div class="hairline"></div>
+      <div class="progress">Parte B · Bloco 3</div>
+      <div class="frame">
+        <div class="eyebrow">Os repositórios do workshop</div>
+        <h2 class="head" style="margin-top:12px">Para que serve cada um</h2>
+        <div class="repo2">
+          <div class="repo2-card">
+            <svg class="repo2-ico" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="5" width="30" height="38" rx="4"/><path d="M21 21 L16 27 L21 33"/><path d="M27 21 L32 27 L27 33"/></svg>
+            <div class="repo2-fn">aprender o contrato</div>
+            <div class="repo2-tags"><span>counter</span><span>bulletin-board</span><span>tokens</span></div>
+            <div class="repo2-note">você lê e roda os contratos, sem Docker nem wallet.</div>
+            <div class="repo2-url">github.com/eddalabs/midnight-contracts</div>
+          </div>
+          <div class="repo2-card">
+            <svg class="repo2-ico" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="9" width="38" height="30" rx="4"/><line x1="5" y1="18" x2="43" y2="18"/><circle cx="12" cy="13.5" r="1.6" fill="currentColor" stroke="none"/><circle cx="18" cy="13.5" r="1.6" fill="currentColor" stroke="none"/></svg>
+            <div class="repo2-fn">virar um app</div>
+            <div class="repo2-tags"><span>frontend</span><span>wallet</span><span>deploy</span></div>
+            <div class="repo2-note">o mesmo <span class="accent">counter</span>, como app end-to-end.</div>
+            <div class="repo2-url">github.com/eddalabs/midnight-starter-template</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 14 -->
+    <section class="slide" data-part="Parte B · Bloco 3">
+      <div class="hairline"></div>
+      <div class="progress">Parte B · Bloco 3</div>
+      <div class="frame">
+        <div class="eyebrow">Dentro do midnight-contracts</div>
+        <h2 class="head" style="margin-top:12px">Do contrato mais simples ao mais avançado</h2>
+        <div class="s14-body">
+          <div class="s14-left">
+            <div class="ramp">
+              <div class="ramp-row"><span class="ramp-n">1</span><span class="ramp-name">counter</span><span class="ramp-desc">só estado público, o mais simples</span><span class="ramp-meter"><i class="on"></i><i></i><i></i><i></i></span></div>
+              <div class="ramp-row"><span class="ramp-n">2</span><span class="ramp-name">bulletin-board</span><span class="ramp-desc">entra o dado privado</span><span class="ramp-meter"><i class="on"></i><i class="on"></i><i></i><i></i></span></div>
+              <div class="ramp-row"><span class="ramp-n">3</span><span class="ramp-name">unshielded-token</span><span class="ramp-desc">tokens públicos: mint, send, receive</span><span class="ramp-meter"><i class="on"></i><i class="on"></i><i class="on"></i><i></i></span></div>
+              <div class="ramp-row"><span class="ramp-n">4</span><span class="ramp-name">shielded-token</span><span class="ramp-desc">tokens privados: valor e dono escondidos</span><span class="ramp-meter"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span></div>
+            </div>
+            <div class="ramp-foot">
+              <span class="rf-label">cada contrato traz</span>
+              <span class="chip">.compact</span><span class="chip">simulador</span><span class="chip">testes</span><span class="chip">docs.md</span>
+            </div>
+            <p class="ramp-mem">e você testa a <b>lógica em memória</b>, sem Docker, sem wallet, sem proof server.</p>
+          </div>
+          <div class="s14-right">
+            <div class="ramp-qr">
+              <div class="qr-card"><img src="assets/qr-contracts.png" alt="QR midnight-contracts"></div>
+              <div class="res-url">github.com/eddalabs/<wbr>midnight-contracts</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 15 -->
+    <section class="slide" data-part="Parte B · Bloco 3">
+      <div class="hairline"></div>
+      <div class="progress">Parte B · Bloco 3</div>
+      <div class="frame">
+        <div class="city-row">
+          <div class="city-left">
+            <div class="eyebrow">O próximo passo</div>
+            <h2 class="head" style="margin-top:16px; font-size:56px">O mesmo counter, agora end-to-end</h2>
+            <div class="repo2-tags" style="margin-top:26px"><span>contrato</span><span>CLI</span><span>frontend</span><span>deploy</span></div>
+            <div class="qr-item">
+              <div class="qr-card"><img src="assets/qr-starter.png" alt="QR midnight-starter-template"></div>
+              <div class="qr-meta">
+                <div class="res-url">github.com/eddalabs/<wbr>midnight-starter-template</div>
+              </div>
+            </div>
+          </div>
+          <div class="city-art">
+            <video class="city-video" src="assets/counter-demo.mp4" autoplay muted loop playsinline preload="auto"></video>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 16 -->
+    <section class="slide" data-part="Parte B · Bloco 4">
+      <div class="hairline"></div>
+      <div class="progress">Parte B · Bloco 4</div>
+      <div class="frame">
+        <div class="eyebrow">O contrato inteiro · counter</div>
+        <h2 class="head" style="margin-top:14px">Um contrato é estado + função</h2>
+        <div class="code-panel full" style="margin-top:32px">pragma language_version &gt;= 0.23;
+
+import CompactStandardLibrary;
+
+// public state
+<span class="hl">export ledger round: Counter;</span>
+
+// transition function changing public state
+<span class="hl">export circuit increment(): [] {</span>
+  round.increment(1);
+}</div>
+        <p class="lead" style="margin-top:30px">Sem <code>witness</code>, sem privacidade, ainda. É a base limpa, antes de adicionar o segredo.</p>
+      </div>
+    </section>
+
+    <!-- SLIDE 17 -->
+    <section class="slide" data-part="Parte B · Bloco 4">
+      <div class="hairline"></div>
+      <div class="progress">Parte B · Bloco 4</div>
+      <div class="frame">
+        <h2 class="head">A anatomia, linha por linha</h2>
+        <p class="small" style="margin-top:10px">cada linha é o modelo mental com palavras-chave.</p>
+        <div class="code-wrap">
+          <div class="code-panel tight">pragma language_version &gt;= 0.23;
+
+import CompactStandardLibrary;
+
+<span class="hl">export ledger round: Counter;</span>     <span class="cmt">// estado público</span>
+
+<span class="hl">export circuit increment(): [] {</span>  <span class="cmt">// vira um circuito ZK</span>
+  round.increment(1);              <span class="cmt">// muda o estado público</span>
+}</div>
+          <div class="callouts">
+            <div class="callout"><span class="cn">1</span><b><code>ledger</code> = o estado público</b>: on-chain, todo mundo lê. <code>Counter</code> é um tipo da stdlib (tem <code>.increment()</code>), não um número solto.</div>
+            <div class="callout"><span class="cn">2</span><b><code>circuit</code>, não <code>function</code>.</b> É o "roda o seu código" do seu lado: a chain só <b>verifica a prova, não executa</b>. O <code>[]</code> = não devolve nada; existe pelo efeito no estado.</div>
+            <div class="callout"><span class="cn">3</span><code>round.increment(1)</code> muda o <b>estado público</b>, é isso que a chain registra.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 18 -->
+    <section class="slide" data-part="Parte B · Bloco 4">
+      <div class="hairline"></div>
+      <div class="progress">Parte B · Bloco 4</div>
+      <div class="frame">
+        <div class="eyebrow">O que o compile gera</div>
+        <h2 class="head" style="margin-top:10px">Compilar transforma o <code>.compact</code> em artefatos.</h2>
+        <p class="small" style="margin-top:8px">O mesmo counter que você leu linha por linha, agora compilado.</p>
+        <div class="gen-head">
+          <div class="gen-src">src/counter.compact</div>
+          <div class="gen-ar"><div class="lab">compact compile</div><svg class="dc-arrow" viewBox="0 0 160 36" fill="none"><line x1="2" y1="18" x2="138" y2="18" stroke="#5570FF" stroke-width="3"/><path d="M158 18 L136 7 L136 29 Z" fill="#5570FF"/></svg></div>
+          <div class="gen-src" style="color:var(--accent-2); border-color:rgba(85,112,255,0.4)">src/managed/counter/</div>
+        </div>
+        <div class="gen-box">
+          <div class="gen-row gen-used"><span class="gen-name">contract/</span><span class="gen-desc">API TypeScript</span><span class="gen-badge">é só isso que o teste usa</span></div>
+          <div class="gen-row"><span class="gen-name">zkir/</span><span class="gen-desc">representação do circuito</span></div>
+          <div class="gen-row gen-keys"><span class="gen-name">keys/</span><span class="gen-desc">chaves ZK (prover / verifier)</span><span class="gen-badge">só no compile cheio</span></div>
+          <div class="gen-row"><span class="gen-name">compiler/</span><span class="gen-desc">metadados do build</span></div>
+        </div>
+        <p class="body" style="margin-top:24px; max-width:1700px"><b>Fase 1 (hoje):</b> teste em memória, nenhuma prova é gerada, usa só o <code>contract/</code>; por isso <code>compact-fast</code> basta. <b>Fase 2 (Bloco 7):</b> deploy de verdade; aí as chaves ZK entram. Esses artefatos não vão no repo (<code>.gitignore</code>), cada um gera os seus.</p>
+      </div>
+    </section>
+
+    <!-- SLIDE 19 -->
+    <section class="slide" data-part="Parte B · Bloco 4">
+      <div class="bg-eclipse"></div>
+      <div class="frame center demo" style="inset:46px var(--pad-x) 88px var(--pad-x)">
+        <div class="demo-row">
+          <div class="demo-left">
+            <span class="demo-tag">DEMO</span>
+            <div class="demo-cmd"><span class="dim">cd counter-contract</span><br>npm run compact-fast<br>&amp;&amp; npm test</div>
+          </div>
+          <video class="demo-vid" src="assets/counter-test.mp4" autoplay muted loop playsinline preload="auto"></video>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 20 -->
+    <section class="slide" data-part="Parte B · Bloco 5">
+      <div class="bg-eclipse"></div>
+      <div class="frame center">
+        <div class="eyebrow" style="margin-bottom:14px">Agora com privacidade · bulletin-board</div>
+        <h2 class="head" style="font-size:60px">Um mural público, uma nota por vez</h2>
+        <div class="board-art">
+          <svg viewBox="0 0 1140 560" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="310" y="18" width="520" height="524" rx="20" fill="rgba(255,255,255,0.025)" stroke="rgba(255,255,255,0.12)" stroke-width="2"/>
+            <g fill="#5570FF" opacity="0.5"><circle cx="346" cy="54" r="6"/><circle cx="794" cy="54" r="6"/><circle cx="346" cy="506" r="6"/><circle cx="794" cy="506" r="6"/></g>
+            <g transform="rotate(-3 570 275)">
+              <rect x="406" y="118" width="340" height="330" rx="12" fill="rgba(0,0,0,0.4)"/>
+              <rect x="400" y="110" width="340" height="330" rx="12" fill="#f3f2ea"/>
+              <circle cx="570" cy="126" r="15" fill="#0000FE"/>
+              <circle cx="565" cy="121" r="5" fill="#ffffff" opacity="0.5"/>
+              <rect x="440" y="180" width="170" height="17" rx="8" fill="#2b2b2b"/>
+              <rect x="440" y="218" width="250" height="11" rx="5" fill="#6e6e6e"/>
+              <rect x="440" y="243" width="250" height="11" rx="5" fill="#6e6e6e"/>
+              <rect x="440" y="268" width="160" height="11" rx="5" fill="#6e6e6e"/>
+              <g transform="rotate(-10 663 372)">
+                <circle cx="663" cy="372" r="40" fill="rgba(0,0,254,0.10)" stroke="#0000FE" stroke-width="3"/>
+                <circle cx="663" cy="372" r="30" fill="none" stroke="#0000FE" stroke-width="1.5" opacity="0.55"/>
+                <rect x="650" y="370" width="26" height="20" rx="3" fill="#0000FE"/>
+                <path d="M655 370 v-7 a8 8 0 0 1 16 0 v7" fill="none" stroke="#0000FE" stroke-width="3.5"/>
+                <circle cx="663" cy="379" r="2.6" fill="#f3f2ea"/>
+              </g>
+            </g>
+            <g font-family="Outfit, sans-serif">
+              <line x1="252" y1="226" x2="446" y2="222" stroke="rgba(255,255,255,0.28)" stroke-width="1.5"/>
+              <circle cx="446" cy="222" r="3" fill="rgba(255,255,255,0.5)"/>
+              <text x="58" y="233" font-size="27" fill="rgba(255,255,255,0.86)">a nota: <tspan font-weight="600" fill="#ffffff">pública</tspan></text>
+              <line x1="868" y1="372" x2="706" y2="372" stroke="rgba(255,255,255,0.28)" stroke-width="1.5"/>
+              <circle cx="706" cy="372" r="3" fill="rgba(255,255,255,0.5)"/>
+              <text x="884" y="380" font-size="27" fill="rgba(255,255,255,0.86)">o autor: <tspan font-weight="600" fill="#5570FF">anônimo</tspan></text>
+            </g>
+          </svg>
+        </div>
+        <p class="lead" style="max-width:1560px">qualquer um posta, e só quem postou pode tirar.</p>
+      </div>
+    </section>
+
+    <!-- SLIDE 21 -->
+    <section class="slide" data-part="Parte B · Bloco 5">
+      <div class="hairline"></div>
+      <div class="progress">Parte B · Bloco 5</div>
+      <div class="frame center">
+        <div class="eyebrow">Como fica anônimo</div>
+        <h2 class="head" style="font-size:60px">Anônimo, mas só o autor tira</h2>
+        <div class="stamp-art">
+          <svg viewBox="0 0 1200 392" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <filter id="bgl" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+            </defs>
+            <g filter="url(#bgl)">
+              <circle cx="112" cy="180" r="40" fill="none" stroke="#5ad1c4" stroke-width="13"/>
+              <rect x="148" y="173" width="120" height="14" rx="4" fill="#5ad1c4"/>
+              <rect x="244" y="187" width="12" height="22" rx="2" fill="#5ad1c4"/>
+              <rect x="216" y="187" width="10" height="16" rx="2" fill="#5ad1c4"/>
+            </g>
+            <text x="150" y="318" text-anchor="middle" font-family="Outfit, sans-serif" font-size="29" font-weight="700" fill="#5ad1c4">sua chave</text>
+            <text x="150" y="352" text-anchor="middle" font-family="Outfit, sans-serif" font-size="23" fill="rgba(255,255,255,0.55)">só você tem</text>
+            <text x="388" y="160" text-anchor="middle" font-family="Outfit, sans-serif" font-size="23" fill="#5570FF">carimba</text>
+            <line x1="305" y1="180" x2="470" y2="180" stroke="#5570FF" stroke-width="3"/>
+            <path d="M468 171 L488 180 L468 189" fill="none" stroke="#5570FF" stroke-width="3" stroke-linejoin="round"/>
+            <g filter="url(#bgl)">
+              <circle cx="600" cy="180" r="70" fill="rgba(0,0,254,0.16)" stroke="#0000FE" stroke-width="3"/>
+              <circle cx="600" cy="180" r="52" fill="none" stroke="#5570FF" stroke-width="2" opacity="0.6"/>
+              <g stroke="#5570FF" stroke-width="4" stroke-linecap="round"><line x1="600" y1="156" x2="600" y2="204"/><line x1="579" y1="168" x2="621" y2="192"/><line x1="621" y1="168" x2="579" y2="192"/></g>
+              <circle cx="600" cy="180" r="6" fill="#0000FE"/>
+            </g>
+            <text x="600" y="318" text-anchor="middle" font-family="Outfit, sans-serif" font-size="29" font-weight="700" fill="#ffffff">um carimbo</text>
+            <text x="600" y="352" text-anchor="middle" font-family="Outfit, sans-serif" font-size="23" fill="rgba(255,255,255,0.55)">único da sua chave</text>
+            <text x="803" y="160" text-anchor="middle" font-family="Outfit, sans-serif" font-size="23" fill="#5570FF">fica no</text>
+            <line x1="720" y1="180" x2="885" y2="180" stroke="#5570FF" stroke-width="3"/>
+            <path d="M883 171 L903 180 L883 189" fill="none" stroke="#5570FF" stroke-width="3" stroke-linejoin="round"/>
+            <rect x="936" y="92" width="228" height="176" rx="14" fill="rgba(255,255,255,0.025)" stroke="rgba(255,255,255,0.12)" stroke-width="2"/>
+            <rect x="966" y="118" width="118" height="124" rx="8" fill="#f3f2ea"/>
+            <rect x="986" y="142" width="78" height="9" rx="4" fill="#3a3a3a"/>
+            <rect x="986" y="162" width="78" height="7" rx="3" fill="#7a7a7a"/>
+            <rect x="986" y="177" width="56" height="7" rx="3" fill="#7a7a7a"/>
+            <g transform="rotate(-8 1058 214)"><circle cx="1058" cy="214" r="18" fill="rgba(0,0,254,0.16)" stroke="#0000FE" stroke-width="2"/><g stroke="#5570FF" stroke-width="2" stroke-linecap="round"><line x1="1058" y1="205" x2="1058" y2="223"/><line x1="1050" y1="209" x2="1066" y2="219"/><line x1="1066" y1="209" x2="1050" y2="219"/></g></g>
+            <text x="1050" y="318" text-anchor="middle" font-family="Outfit, sans-serif" font-size="29" font-weight="700" fill="#ffffff">o quadro</text>
+            <text x="1050" y="352" text-anchor="middle" font-family="Outfit, sans-serif" font-size="23" fill="rgba(255,255,255,0.55)">vê o carimbo, não você</text>
+          </svg>
+        </div>
+        <p class="lead" style="max-width:1620px">Pra tirar, você refaz o carimbo com a mesma chave. Bate? então é você, sem o quadro nunca saber quem é.</p>
+      </div>
+    </section>
+
+    <!-- SLIDE 22 -->
+    <section class="slide" data-part="Parte B · Bloco 5">
+      <div class="hairline"></div>
+      <div class="progress">Parte B · Bloco 5</div>
+      <div class="frame">
+        <h2 class="head">O contrato inteiro</h2>
+        <div class="ov-row">
+          <div class="code-wrap">
+            <div class="code-panel full" style="font-size:17px; line-height:1.55">pragma language_version &gt;= 0.23;
+import CompactStandardLibrary;
+<span class="cmt sec">// 1 · estado público</span>
+export ledger note: Opaque&lt;"string"&gt;;
+export ledger hasNote: Boolean;
+export ledger authorCommitment: Bytes&lt;32&gt;;
+<span class="cmt sec">// 2 · o segredo (a chave)</span>
+witness local_secret_key(): Bytes&lt;32&gt;;
+<span class="cmt sec">// 3 · faz o carimbo</span>
+pure circuit compute_author_commitment(sk: Bytes&lt;32&gt;): Bytes&lt;32&gt; {
+  return persistentHash&lt;Vector&lt;2, Bytes&lt;32&gt;&gt;&gt;([pad(32, "bboard:author:"), sk]);
+}
+<span class="cmt sec">// 4 · postar</span>
+export circuit postNote(content: Opaque&lt;"string"&gt;): [] {
+  assert(disclose(!hasNote), "Board is full");
+  const sk = local_secret_key();
+  const commitment = compute_author_commitment(sk);
+  note = disclose(content);
+  authorCommitment = disclose(commitment);
+  hasNote = true;
+}
+<span class="cmt sec">// 5 · tirar</span>
+export circuit takeDown(): [] {
+  assert(disclose(hasNote), "No note to take down");
+  const sk = local_secret_key();
+  const callerCommitment = compute_author_commitment(sk);
+  assert(disclose(callerCommitment == authorCommitment), "Only the original author");
+  hasNote = false;
+}</div>
+          </div>
+          <div class="ov-legend">
+            <div class="eyebrow">as 5 partes</div>
+            <div class="ov-item"><span class="ov-n">1</span><div><div class="ov-nm">estado público</div><div class="ov-d">a nota, se tem nota, e o autor virado um hash</div></div></div>
+            <div class="ov-item"><span class="ov-n">2</span><div><div class="ov-nm">o segredo</div><div class="ov-d">a chave do autor, que nunca sai da sua máquina</div></div></div>
+            <div class="ov-item"><span class="ov-n">3</span><div><div class="ov-nm">faz o carimbo</div><div class="ov-d">o hash da chave, que esconde quem postou</div></div></div>
+            <div class="ov-item"><span class="ov-n">4</span><div><div class="ov-nm">postar</div><div class="ov-d">guarda a nota e o carimbo, se o quadro está vazio</div></div></div>
+            <div class="ov-item"><span class="ov-n">5</span><div><div class="ov-nm">tirar</div><div class="ov-d">só quem refaz o carimbo com a mesma chave</div></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 23 -->
+    <section class="slide" data-part="Parte B · Bloco 5">
+      <div class="hairline"></div>
+      <div class="progress">Parte B · Bloco 5</div>
+      <div class="frame">
+        <h2 class="head">O estado público</h2>
+        <div class="code-wrap" style="margin-top:20px">
+          <div class="code-panel full" style="font-size:25px"><span class="cmt">// estado público: todo mundo lê</span>
+export ledger note: Opaque&lt;"string"&gt;;        <span class="cmt">// o conteúdo da nota</span>
+export ledger hasNote: Boolean;               <span class="cmt">// se já tem nota no quadro</span>
+export ledger authorCommitment: Bytes&lt;32&gt;;    <span class="cmt">// o autor, escondido num hash</span></div>
+        </div>
+        <p class="lead" style="margin-top:34px">A nota é pública. O autor, não: vira um hash. E de onde vem esse hash?</p>
+      </div>
+    </section>
+
+    <!-- SLIDE 24 -->
+    <section class="slide" data-part="Parte B · Bloco 5">
+      <div class="hairline"></div>
+      <div class="progress">Parte B · Bloco 5</div>
+      <div class="frame">
+        <h2 class="head"><span class="mono accent">witness</span>: a porta do dado privado</h2>
+        <div class="code-wrap" style="margin-top:20px">
+          <div class="code-panel full"><span class="cmt">// witness: o dado privado que você fornece</span>
+witness local_secret_key(): Bytes&lt;32&gt;;
+
+<span class="cmt">// calcula o commitment (hash) da chave do autor</span>
+pure circuit compute_author_commitment(sk: Bytes&lt;32&gt;): Bytes&lt;32&gt; {
+  return persistentHash&lt;Vector&lt;2, Bytes&lt;32&gt;&gt;&gt;([pad(32, "bboard:author:"), sk]);
+}</div>
+        </div>
+        <p class="lead" style="margin-top:30px">A chave nunca sai da sua máquina. O hash dela esconde quem é, mas só a mesma chave refaz ele.</p>
+      </div>
+    </section>
+
+    <!-- SLIDE 25 -->
+    <section class="slide" data-part="Parte B · Bloco 5">
+      <div class="hairline"></div>
+      <div class="progress">Parte B · Bloco 5</div>
+      <div class="frame">
+        <h2 class="head">Postar: conteúdo público, autor escondido</h2>
+        <div class="code-wrap" style="gap:44px; margin-top:24px">
+          <div class="code-panel" style="font-size:24px">export circuit postNote(content: Opaque&lt;"string"&gt;): [] {
+  assert(disclose(!hasNote), "Board is full - someone already posted a note");
+
+  const sk = local_secret_key();
+  const commitment = compute_author_commitment(sk);
+
+  <span class="hl">note = disclose(content);</span>
+  <span class="hl">authorCommitment = disclose(commitment);</span>
+  hasNote = true;
+}</div>
+          <div class="callouts" style="width:440px">
+            <div class="callout"><span class="cn">1</span>lê a chave privada (<code>witness</code>)</div>
+            <div class="callout"><span class="cn">2</span>o <code>commitment</code> vem da chave, então também é privado</div>
+            <div class="callout"><span class="cn">3</span>escrever no <code>ledger</code> torna público, por isso o <code>disclose</code></div>
+            <div class="callout"><span class="cn">4</span>isso já era público, não precisa de <code>disclose</code></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 26 -->
+    <section class="slide" data-part="Parte B · Bloco 5">
+      <div class="hairline"></div>
+      <div class="progress">Parte B · Bloco 5</div>
+      <div class="frame">
+        <h2 class="head" style="font-size:50px"><span class="mono accent">disclose</span>: você autoriza o que vira público</h2>
+        <div class="disclose-art">
+          <div class="dz priv">
+            <div class="dz-label">privado</div>
+            <div class="dchip"><span class="id">content</span><span class="gl">a nota que você digita</span></div>
+            <div class="dchip"><span class="id">sk</span><span class="gl">sua chave</span></div>
+            <div class="dchip"><span class="id">commitment</span><span class="gl">o hash da chave (interno)</span></div>
+          </div>
+          <div class="darrow">&#8594;</div>
+          <div class="dgate">
+            <span class="id">disclose()</span>
+            <span class="sub">você autoriza &#10003;</span>
+          </div>
+          <div class="darrow">&#8594;</div>
+          <div class="dz pub">
+            <div class="dz-label">público</div>
+            <div class="dpub-head">o compilador exige <span class="mono accent">disclose</span> quando o dado privado vira observável:</div>
+            <div class="ditem">escrito no estado público <span class="mono accent">(note, authorCommitment)</span></div>
+            <div class="ditem">retornado por um <span class="mono accent">circuit</span> exportado</div>
+            <div class="ditem">usado na condição de um <span class="mono accent">assert</span></div>
+          </div>
+        </div>
+        <div class="code-wrap" style="margin-top:26px">
+          <div class="code-panel" style="font-size:22px"><span class="hl">note = disclose(content);</span>             <span class="cmt">// a nota vira pública</span>
+<span class="hl">authorCommitment = disclose(commitment);</span>  <span class="cmt">// o carimbo, também</span></div>
+        </div>
+        <p class="lead" style="margin-top:24px">O compilador só rastreia de onde o dado veio, não a criptografia: ele cuida do caminho, e você responde pelo que é seguro revelar.</p>
+      </div>
+    </section>
+
+    <!-- SLIDE 27 -->
+    <section class="slide" data-part="Parte B · Bloco 5">
+      <div class="hairline"></div>
+      <div class="progress">Parte B · Bloco 5</div>
+      <div class="frame">
+        <h2 class="head">Provar autoria sem revelar a identidade</h2>
+        <div class="code-wrap" style="margin-top:20px">
+          <div class="code-panel full" style="font-size:23px">export circuit takeDown(): [] {
+  assert(disclose(hasNote), "No note to take down");
+
+  const sk = local_secret_key();
+  const callerCommitment = compute_author_commitment(sk);
+  <span class="hl">assert(disclose(callerCommitment == authorCommitment), "Only the original author can take down the note");</span>
+
+  hasNote = false;
+}</div>
+        </div>
+        <div class="match-art">
+          <div class="match-seal">
+            <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="40" cy="40" r="34" fill="rgba(0,0,254,0.14)" stroke="#0000FE" stroke-width="2.5"/><circle cx="40" cy="40" r="25" fill="none" stroke="#5570FF" stroke-width="1.5" opacity="0.6"/><g stroke="#5570FF" stroke-width="2.5" stroke-linecap="round"><line x1="40" y1="28" x2="40" y2="52"/><line x1="30" y1="34" x2="50" y2="46"/><line x1="50" y1="34" x2="30" y2="46"/></g><circle cx="40" cy="40" r="3" fill="#0000FE"/></svg>
+            <div class="ms-id pub">authorCommitment</div>
+            <div class="ms-gl">guardado no quadro</div>
+          </div>
+          <div class="match-op">==</div>
+          <div class="match-seal">
+            <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="40" cy="40" r="34" fill="rgba(90,209,196,0.12)" stroke="#5ad1c4" stroke-width="2.5"/><circle cx="40" cy="40" r="25" fill="none" stroke="#5ad1c4" stroke-width="1.5" opacity="0.55"/><g stroke="#5ad1c4" stroke-width="2.5" stroke-linecap="round"><line x1="40" y1="28" x2="40" y2="52"/><line x1="30" y1="34" x2="50" y2="46"/><line x1="50" y1="34" x2="30" y2="46"/></g><circle cx="40" cy="40" r="3" fill="#5ad1c4"/></svg>
+            <div class="ms-id priv">callerCommitment</div>
+            <div class="ms-gl">refeito com a sua chave</div>
+          </div>
+          <div class="match-op">&#8594;</div>
+          <div class="match-verdict"><span class="mv-check">&#10003;</span><span class="mv-txt">bate<b>é o autor</b></span></div>
+        </div>
+        <p class="lead" style="margin-top:28px">A chave nunca sai da sua máquina: pra chain cruza só o sim/não. É o padrão <strong>commitment</strong>, publica o hash uma vez e prova depois recomputando.</p>
+      </div>
+    </section>
+
+    <!-- SLIDE 28 -->
+    <section class="slide" data-part="Parte B · Bloco 5">
+      <div class="hairline"></div>
+      <div class="progress">Parte B · Bloco 5</div>
+      <div class="frame">
+        <div class="code-wrap">
+          <div class="code-panel tight" style="font-size:23px; line-height:1.5">export ledger note: Opaque&lt;"string"&gt;;
+export ledger hasNote: Boolean;
+export ledger authorCommitment: Bytes&lt;32&gt;;
+
+witness local_secret_key(): Bytes&lt;32&gt;;
+
+export circuit postNote(content: Opaque&lt;"string"&gt;): [] {
+  assert(disclose(!hasNote), "Board is full");
+  const sk = local_secret_key();
+  const commitment = compute_author_commitment(sk);
+  note = disclose(content);
+  authorCommitment = disclose(commitment);
+  hasNote = true;
+}</div>
+          <div class="callouts" style="width:600px">
+            <div class="stmt" style="font-size:58px; line-height:1.1">Onde está cada uma das 5?</div>
+            <div class="mono accent" style="font-size:38px; font-weight:600; margin-top:40px; line-height:1.85">ledger<br>witness<br>circuit<br>assert<br>disclose</div>
+            <p class="small" style="margin-top:34px">as cinco palavras-chave, todas vistas lendo um contrato de verdade, não num slide de definição. E o padrão que costura as cinco: o commitment.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 29 -->
+    <section class="slide" data-part="Parte B · Bloco 5">
+      <div class="hairline"></div>
+      <div class="progress">Parte B · Bloco 5</div>
+      <div class="frame">
+        <div class="eyebrow">framework de teste · simulador</div>
+        <h2 class="head" style="margin-top:12px">Testar a lógica sem deploy</h2>
+        <div class="code-wrap" style="gap:44px; margin-top:22px">
+          <div class="code-panel" style="font-size:21px">it("preserva a privacidade do autor", () =&gt; {
+  const simulator = createSimulator();
+
+  <span class="cmt">// user1 posta, tira, e posta de novo</span>
+  let ledger = simulator.as("user1").postNote("Nota 1");
+  const commitment1 = ledger.authorCommitment;
+  simulator.as("user1").takeDown();
+  ledger = simulator.as("user1").postNote("Nota 2");
+  <span class="hl">expect(commitment1).toEqual(ledger.authorCommitment);</span>
+
+  <span class="cmt">// agora o user2 posta</span>
+  simulator.as("user1").takeDown();
+  ledger = simulator.as("user2").postNote("Nota 3");
+  <span class="hl">expect(commitment1).not.toEqual(ledger.authorCommitment);</span>
+});</div>
+          <div class="callouts" style="width:520px">
+            <div class="callout"><span class="cn">1</span>o simulador roda o contrato localmente, sem deploy</div>
+            <div class="callout"><span class="cn">2</span><code>.as("user1")</code> e <code>.as("user2")</code> trocam a chave privada de cada um</div>
+            <div class="callout"><span class="cn">3</span>mesmo autor, mesmo <code>commitment</code>; outro autor, <code>commitment</code> diferente</div>
+          </div>
+        </div>
+        <p class="small" style="margin-top:26px"><code>npm test</code>, e a privacidade do slide anterior vira um teste que passa.</p>
+      </div>
+    </section>
+
+    <!-- SLIDE 30 -->
+    <section class="slide" data-part="Parte B · Bloco 6">
+      <div class="hairline"></div>
+      <div class="progress">Parte B · Bloco 6</div>
+      <div class="frame">
+        <div class="eyebrow">O plugin da Edda Labs</div>
+        <h2 class="head" style="margin-top:14px">As cinco skills do plugin de Midnight</h2>
+        <p class="small" style="margin-top:16px">já vem ligado no repo do workshop: <span class="mono accent">.claude/settings.json</span> com <span class="mono accent">"midnight@edda-labs-marketplace": true</span></p>
+        <div class="res-list skills" style="margin-top:30px">
+          <div class="res-row">
+            <div class="res-tick"></div>
+            <div class="res-name">/midnight-docs</div>
+            <div class="res-desc">busca a doc oficial ao vivo e cita a fonte (índice de 100+ páginas)</div>
+          </div>
+          <div class="res-row">
+            <div class="res-tick"></div>
+            <div class="res-name">/midnight-docs-repos</div>
+            <div class="res-desc">base técnica dos 4 repos internos: <code>ledger</code> (Rust), <code>midnight-js</code>, <code>wallet</code>, <code>zk</code></div>
+          </div>
+          <div class="res-row">
+            <div class="res-tick"></div>
+            <div class="res-name">/midnight-contracts</div>
+            <div class="res-desc">contratos Compact anotados: <code>.compact</code> + walkthrough <code>.md</code> (inclui o bulletin board de hoje)</div>
+          </div>
+          <div class="res-row">
+            <div class="res-tick"></div>
+            <div class="res-name">/midnight-examples</div>
+            <div class="res-desc">DApps oficiais de referência: <code>zkloan</code>, <code>kitties</code>, <code>rwa</code> (contrato, CLI e UI)</div>
+          </div>
+          <div class="res-row">
+            <div class="res-tick"></div>
+            <div class="res-name">/midnight-starter</div>
+            <div class="res-desc">layout canônico do monorepo, build <code>pnpm</code> + <code>Turbo</code>, teste e deploy</div>
+          </div>
+        </div>
+        <p class="small" style="margin-top:30px">cada skill é um slash-command no Claude Code. pergunta em português, a skill responde.</p>
+        <p class="small" style="margin-top:14px; color:var(--faint)">no seu projeto: <code>/plugin marketplace add eddalabs/edda-marketplace</code> · <code>/plugin install midnight</code></p>
+      </div>
+    </section>
+
+    <!-- SLIDE 31 -->
+    <section class="slide" data-part="Parte B · Bloco 7">
+      <div class="hairline"></div>
+      <div class="progress">Parte B · Bloco 7</div>
+      <div class="frame">
+        <div class="eyebrow">Do contrato ao app</div>
+        <h2 class="head" style="margin-top:10px">O mesmo contrato, agora como app</h2>
+        <p class="small" style="margin-top:8px">o app adiciona CLI, frontend e deploy.</p>
+        <div class="gen-head">
+          <div class="gen-src">counter.compact</div>
+          <div class="gen-ar"><svg class="dc-arrow" viewBox="0 0 160 36" fill="none"><line x1="2" y1="18" x2="138" y2="18" stroke="#5570FF" stroke-width="3"/><path d="M158 18 L136 7 L136 29 Z" fill="#5570FF"/></svg></div>
+          <div class="gen-src" style="color:var(--accent-2); border-color:rgba(85,112,255,0.4)">midnight-starter-template</div>
+        </div>
+        <div class="gen-box">
+          <div class="gen-row gen-used"><span class="gen-name" style="width:300px">counter-contract</span><span class="gen-desc">o contrato que você leu</span><span class="gen-badge">idêntico</span></div>
+          <div class="gen-row"><span class="gen-name" style="width:300px">counter-cli</span><span class="gen-desc">deploy e uso pelo terminal</span></div>
+          <div class="gen-row"><span class="gen-name" style="width:300px">frontend-vite-react</span><span class="gen-desc">a tela com wallet que o usuário abre</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 32 -->
+    <section class="slide" data-part="Parte B · Bloco 7">
+      <div class="hairline"></div>
+      <div class="progress">Parte B · Bloco 7</div>
+      <div class="frame">
+        <div class="eyebrow">Do contrato à rede</div>
+        <h2 class="head" style="margin-top:10px">O deploy do contrato</h2>
+        <div class="dpipe">
+          <div class="dp-stage"><div class="dp-name">compilar</div></div>
+          <div class="dp-arrow">&rarr;</div>
+          <div class="dp-stage"><div class="dp-name">proof server</div></div>
+          <div class="dp-arrow">&rarr;</div>
+          <div class="dp-stage"><div class="dp-name">faucet (tDUST)</div></div>
+          <div class="dp-arrow">&rarr;</div>
+          <div class="dp-stage out"><div class="dp-name">deploy</div></div>
+        </div>
+        <p class="small" style="margin-top:30px; color:var(--faint)">o frontend é um segundo deploy, na Vercel.</p>
+      </div>
+    </section>
+
+    <!-- SLIDE 33 -->
+    <section class="slide" data-part="Parte B · Bloco 7">
+      <div class="bg-eclipse"></div>
+      <div class="frame center demo" style="inset:46px var(--pad-x) 88px var(--pad-x)">
+        <span class="demo-tag" style="margin-bottom:26px">DEMO</span>
+        <video class="demo-vid wide" src="assets/counter-demo.mp4" autoplay muted loop playsinline preload="auto"></video>
+        <p class="demo-sub">o mesmo counter que você leu, agora com tela, wallet e transação on-chain.</p>
+        <!-- URL do app: Tainá confirmar a URL Vercel real e adicionar como .demo-url/.small, ou apagar -->
+      </div>
+    </section>
+
+    <!-- SLIDE 34 -->
+    <section class="slide" data-part="Parte B · Bloco 8">
+      <div class="hairline"></div>
+      <div class="progress">Parte B · Bloco 8</div>
+      <div class="frame">
+        <h2 class="head">Os dois repos</h2>
+        <div class="qr-row">
+          <div class="qr-item">
+            <div class="qr-card"><img src="assets/qr-contracts.png" alt="QR midnight-contracts"></div>
+            <div class="qr-meta">
+              <div class="n">eddalabs/midnight-contracts</div>
+              <div class="d">ler e rodar contratos, sem Docker nem wallet</div>
+            </div>
+          </div>
+          <div class="qr-item">
+            <div class="qr-card"><img src="assets/qr-starter.png" alt="QR midnight-starter-template"></div>
+            <div class="qr-meta">
+              <div class="n">eddalabs/midnight-starter-template</div>
+              <div class="d">o mesmo counter como app: CLI, frontend, wallet, deploy</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 35 -->
+    <section class="slide" data-part="Parte B · Bloco 8">
+      <div class="hairline"></div>
+      <div class="progress">Parte B · Bloco 8</div>
+      <div class="frame">
+        <div class="acad-row">
+          <video class="acad-vid" src="assets/academy-demo.mp4" autoplay muted loop playsinline preload="auto"></video>
+          <div class="acad-text">
+            <div class="eyebrow">Próximos passos</div>
+            <h2 class="head" style="margin-top:16px">Midnight Academy</h2>
+            <p class="body" style="margin-top:20px">a trilha oficial da Midnight, 8 módulos.</p>
+            <div class="res-url" style="font-size:28px; margin-top:26px">academy.midnight.network</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 36 -->
+    <section class="slide" data-part="Parte B · Bloco 8">
+      <div class="hairline"></div>
+      <div class="progress">Parte B · Bloco 8</div>
+      <div class="frame">
+        <div class="eyebrow">Próximos passos</div>
+        <h2 class="head" style="margin-top:12px">Comunidade e conteúdo</h2>
+        <div class="res-list" style="margin-top:26px">
+          <div class="res-row">
+            <div class="res-tick"></div>
+            <div class="res-name">Discord</div>
+            <div class="res-desc">a comunidade Midnight</div>
+            <div class="res-url">discord.gg/midnightnetwork</div>
+          </div>
+          <div class="res-row">
+            <div class="res-tick"></div>
+            <div class="res-name">Midnight Sessions</div>
+            <div class="res-desc">nosso canal, walkthroughs</div>
+            <div class="res-url">youtube.com/@eddalabs</div>
+          </div>
+          <div class="res-row">
+            <div class="res-tick"></div>
+            <div class="res-name">Aliit Fellowship</div>
+            <div class="res-desc">o programa que nós somos parte</div>
+            <div class="res-url">midnight.network/aliit</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 37 -->
+    <section class="slide" data-part="Parte B · Bloco 8">
+      <div class="hairline"></div>
+      <div class="progress">Parte B · Bloco 8</div>
+      <div class="frame">
+        <div class="eyebrow">Próximos passos</div>
+        <h2 class="head" style="margin-top:12px">Build Club &rarr; NIGHT Sky</h2>
+        <p class="body" style="margin-top:16px">da ideia (2 meses) ao acelerador (10 semanas).</p>
+        <div class="qr-row" style="margin-top:34px">
+          <div class="qr-item">
+            <div class="qr-card"><img src="assets/qr-buildclub.png" alt="QR build-club"></div>
+            <div class="qr-meta">
+              <div class="n">midnight.network/build-club</div>
+              <div class="d">Build Club, idea-stage, 2 meses</div>
+            </div>
+          </div>
+          <div class="qr-item">
+            <div class="qr-card"><img src="assets/qr-nightsky.png" alt="QR night-sky-accelerator"></div>
+            <div class="qr-meta">
+              <div class="n">midnight.network/night-sky-accelerator</div>
+              <div class="d">NIGHT Sky Accelerator, acelerador, 10 semanas</div>
+            </div>
+          </div>
+        </div>
+        <div style="margin-top:30px"><span class="seal">Inscrições do NIGHT Sky abertas, fecham 15/jul/2026</span></div>
+      </div>
+    </section>
+
+    <!-- SLIDE 38 -->
+    <section class="slide" data-part="CTA final">
+      <div class="bg-eclipse"></div>
+      <div class="frame center statement">
+        <div class="stmt" style="font-size:76px">Privacidade nos seus apps <span class="soft">sem virar criptógrafo.</span> Agora é com vocês.</div>
+        <p class="lead" style="margin-top:8px">marquem a gente no que construírem</p>
+        <p class="lead" style="margin-top:14px"><span class="accent">@tainabugs</span> · <span class="accent">@ErickRomeroEdda</span> &nbsp;·&nbsp; <span class="accent">#MidnightNetwork</span></p>
+        <p class="lead" style="margin-top:20px">Foto da turma!</p>
+      </div>
+    </section>
+
+    <!-- ===================== /SLIDES ==================== -->
+  </div>
+</div>
+<div id="counter"></div>
+
+<!-- syntax highlighter do Compact (próprio, sem lib externa) -->
+<script>
+(function () {
+  const KW = new Set(['pragma','language_version','import','export','ledger','circuit','witness','pure','const','assert','disclose','return','enum','struct','if','else']);
+  const TYPES = new Set(['Counter','Boolean','Opaque','Bytes','Uint','Field','Vector','CompactStandardLibrary','ContractAddress','ZswapCoinPublicKey','Cell','Map','Set','List','MerkleTree']);
+  const RE = /("(?:[^"\\]|\\.)*")|(\b\d+(?:\.\d+)?\b)|([A-Za-z_]\w*)|(\s+)|([^\w\s"])/g;
+  function tokenize(text) {
+    const frag = document.createDocumentFragment();
+    let m; RE.lastIndex = 0;
+    while ((m = RE.exec(text)) !== null) {
+      const val = m[0];
+      let cls = null;
+      if (m[1]) cls = 'tok-str';
+      else if (m[2]) cls = 'tok-num';
+      else if (m[3]) {
+        if (KW.has(val)) cls = 'tok-kw';
+        else if (TYPES.has(val) || /^[A-Z]/.test(val)) cls = 'tok-type';
+        else if (/^\s*\(/.test(text.slice(RE.lastIndex))) cls = 'tok-fn';
+      } else if (m[5]) cls = 'tok-punct';
+      if (cls) { const s = document.createElement('span'); s.className = cls; s.textContent = val; frag.appendChild(s); }
+      else frag.appendChild(document.createTextNode(val));
+    }
+    return frag;
+  }
+  function highlight(panel) {
+    const walker = document.createTreeWalker(panel, NodeFilter.SHOW_TEXT, null);
+    const nodes = []; let n;
+    while ((n = walker.nextNode())) {
+      if (n.parentElement && n.parentElement.closest('.cmt')) continue;  // comentários ficam cinza
+      if (!n.textContent.trim()) continue;                               // whitespace puro preservado
+      nodes.push(n);
+    }
+    nodes.forEach(node => node.replaceWith(tokenize(node.textContent)));
+  }
+  document.querySelectorAll('.code-panel').forEach(highlight);
+})();
+</script>
+
+<script>
+(function () {
+  const deck = document.getElementById('deck');
+  const slides = Array.from(deck.querySelectorAll('section.slide'));
+  const counter = document.getElementById('counter');
+  let i = 0;
+
+  function clampFromHash() {
+    const h = parseInt((location.hash || '').replace('#', ''), 10);
+    if (!isNaN(h) && h >= 1 && h <= slides.length) i = h - 1;
+  }
+  function show(n) {
+    i = Math.max(0, Math.min(slides.length - 1, n));
+    slides.forEach((s, k) => s.classList.toggle('active', k === i));
+    counter.textContent = (i + 1) + ' / ' + slides.length;
+    if (('#' + (i + 1)) !== location.hash) history.replaceState(null, '', '#' + (i + 1));
+  }
+  function next() { show(i + 1); }
+  function prev() { show(i - 1); }
+
+  function fit() {
+    const s = Math.min(window.innerWidth / 1920, window.innerHeight / 1080);
+    deck.style.setProperty('--scale', s);
+  }
+
+  window.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowRight' || e.key === 'PageDown' || e.key === ' ') { e.preventDefault(); next(); }
+    else if (e.key === 'ArrowLeft' || e.key === 'PageUp') { e.preventDefault(); prev(); }
+    else if (e.key === 'Home') { show(0); }
+    else if (e.key === 'End') { show(slides.length - 1); }
+    else if (e.key === 'f' || e.key === 'F') { if (document.fullscreenElement) document.exitFullscreen(); else document.documentElement.requestFullscreen(); }
+  });
+  document.getElementById('stage').addEventListener('click', (e) => {
+    next();
+  });
+  window.addEventListener('resize', fit);
+  window.addEventListener('hashchange', () => { clampFromHash(); show(i); });
+
+  fit();
+  clampFromHash();
+  show(i);
+})();
+</script>
+</body>
+</html>
