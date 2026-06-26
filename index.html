@@ -998,6 +998,8 @@ export circuit postNote(content: Opaque&lt;"string"&gt;): [] {
   </div>
 </div>
 <div id="counter"></div>
+<button id="navPrev" class="navbtn" aria-label="slide anterior">&lsaquo;</button>
+<button id="navNext" class="navbtn" aria-label="próximo slide">&rsaquo;</button>
 
 <!-- syntax highlighter do Compact (próprio, sem lib externa) -->
 <script>
@@ -1069,9 +1071,17 @@ export circuit postNote(content: Opaque&lt;"string"&gt;): [] {
     else if (e.key === 'End') { show(slides.length - 1); }
     else if (e.key === 'f' || e.key === 'F') { if (document.fullscreenElement) document.exitFullscreen(); else document.documentElement.requestFullscreen(); }
   });
-  document.getElementById('stage').addEventListener('click', (e) => {
-    next();
-  });
+  let tsX = null, tsY = null, swiped = false;
+  document.getElementById('stage').addEventListener('click', () => { if (swiped) { swiped = false; return; } next(); });
+  document.getElementById('navPrev').addEventListener('click', (e) => { e.stopPropagation(); prev(); });
+  document.getElementById('navNext').addEventListener('click', (e) => { e.stopPropagation(); next(); });
+  window.addEventListener('touchstart', (e) => { const t = e.changedTouches[0]; tsX = t.clientX; tsY = t.clientY; swiped = false; }, { passive: true });
+  window.addEventListener('touchend', (e) => {
+    if (tsX === null) return;
+    const t = e.changedTouches[0], dx = t.clientX - tsX, dy = t.clientY - tsY;
+    if (Math.abs(dx) > 45 && Math.abs(dx) > Math.abs(dy) * 1.5) { swiped = true; (dx < 0 ? next : prev)(); }
+    tsX = null;
+  }, { passive: true });
   window.addEventListener('resize', fit);
   window.addEventListener('hashchange', () => { clampFromHash(); show(i); });
 

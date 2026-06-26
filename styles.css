@@ -504,6 +504,13 @@ ul.bullets.big li { font-size: 40px; line-height: 1.28; }
 .acad-vid { flex: 0 0 58%; width: 58%; aspect-ratio: 5 / 3; border: 1.5px solid var(--line); border-radius: 16px; background: #000; object-fit: cover; display: block; }
 .acad-text { flex: 1; min-width: 0; }
 
+/* navegação touch/mobile — setas na tela */
+.navbtn { position: fixed; top: 50%; transform: translateY(-50%); z-index: 50; width: 58px; height: 58px; border-radius: 50%; border: 1px solid rgba(255,255,255,0.22); background: rgba(0,0,0,0.4); color: #fff; font-size: 36px; cursor: pointer; display: flex; align-items: center; justify-content: center; opacity: 0.28; transition: opacity .2s; -webkit-tap-highlight-color: transparent; font-family: var(--mono); }
+.navbtn:hover, .navbtn:active { opacity: 0.9; }
+#navPrev { left: 20px; }
+#navNext { right: 20px; }
+@media (hover: none) { .navbtn { opacity: 0.55; width: 64px; height: 64px; } }
+
 /* syntax highlighting do Compact (tema colorido, estilo editor) */
 .code-panel .tok-kw    { color: #7c9cff; font-weight: 500; }  /* export, circuit, ledger, witness, assert, disclose, const, pragma, import, return, pure */
 .code-panel .tok-type  { color: #5ad1c4; }                    /* Counter, Bytes, Opaque, Boolean, Uint, Vector… (tipos) */
