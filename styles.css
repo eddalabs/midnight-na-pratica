@@ -407,6 +407,8 @@ ul.bullets.big li { font-size: 40px; line-height: 1.28; }
 .board-art svg { width: 100%; height: auto; display: block; }
 .stamp-art { width: 100%; max-width: 1200px; margin: 30px auto 24px; }
 .stamp-art svg { width: 100%; height: auto; display: block; }
+.infra-art { width: 100%; max-width: 1380px; margin: 20px auto 0; }
+.infra-art svg { width: 100%; height: auto; display: block; }
 .code-panel .sec { color: #8aa0ff; font-weight: 600; }
 /* slide 22 — visão geral do contrato: código + legenda das partes */
 .ov-row { display: flex; gap: 48px; width: 100%; max-width: 1680px; align-items: center; margin-top: 22px; }
@@ -510,6 +512,13 @@ ul.bullets.big li { font-size: 40px; line-height: 1.28; }
 #navPrev { left: 20px; }
 #navNext { right: 20px; }
 @media (hover: none) { .navbtn { opacity: 0.55; width: 64px; height: 64px; } }
+.fsbtn { position: fixed; top: 18px; right: 18px; z-index: 50; width: 48px; height: 48px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.2); background: rgba(0,0,0,0.4); color: #fff; cursor: pointer; display: flex; align-items: center; justify-content: center; opacity: 0.28; transition: opacity .2s; -webkit-tap-highlight-color: transparent; }
+.fsbtn:hover, .fsbtn:active { opacity: 0.9; }
+.fsbtn svg { width: 22px; height: 22px; }
+@media (hover: none) { .fsbtn { opacity: 0.55; width: 52px; height: 52px; } }
+
+/* rótulo curto acima de um bloco de código (ex.: .compact / TypeScript) */
+.codelabel { font-size: 30px; font-weight: 600; color: var(--ink); margin: 0 0 12px 4px; }
 
 /* syntax highlighting do Compact (tema colorido, estilo editor) */
 .code-panel .tok-kw    { color: #7c9cff; font-weight: 500; }  /* export, circuit, ledger, witness, assert, disclose, const, pragma, import, return, pure */

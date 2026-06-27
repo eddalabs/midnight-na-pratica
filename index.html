@@ -618,16 +618,21 @@ export ledger authorCommitment: Bytes&lt;32&gt;;    <span class="cmt">// o autor
       <div class="progress">Parte B · Bloco 5</div>
       <div class="frame">
         <h2 class="head"><span class="mono accent">witness</span>: a porta do dado privado</h2>
-        <div class="code-wrap" style="margin-top:20px">
-          <div class="code-panel full"><span class="cmt">// witness: o dado privado que você fornece</span>
-witness local_secret_key(): Bytes&lt;32&gt;;
-
-<span class="cmt">// calcula o commitment (hash) da chave do autor</span>
-pure circuit compute_author_commitment(sk: Bytes&lt;32&gt;): Bytes&lt;32&gt; {
-  return persistentHash&lt;Vector&lt;2, Bytes&lt;32&gt;&gt;&gt;([pad(32, "bboard:author:"), sk]);
-}</div>
+        <div class="codelabel" style="margin-top:28px">declaração · <span class="mono accent">.compact</span></div>
+        <div class="code-wrap" style="margin-top:0">
+          <div class="code-panel full" style="font-size:24px"><span class="cmt">// só declara que esse dado privado existe</span>
+witness local_secret_key(): Bytes&lt;32&gt;;</div>
         </div>
-        <p class="lead" style="margin-top:30px">A chave nunca sai da sua máquina. O hash dela esconde quem é, mas só a mesma chave refaz ele.</p>
+        <div class="codelabel" style="margin-top:18px">implementação · <span class="mono accent">TypeScript</span></div>
+        <div class="code-wrap" style="margin-top:0">
+          <div class="code-panel full" style="font-size:21px"><span class="cmt">// witnesses.ts: roda na SUA máquina, fornece o segredo</span>
+type PrivateState = { secretKey: Uint8Array };
+
+export const witnesses = {
+  local_secret_key: (context) =&gt;
+    [context.privateState, context.privateState.secretKey],
+};</div>
+        </div>
       </div>
     </section>
 
@@ -858,17 +863,48 @@ export circuit postNote(content: Opaque&lt;"string"&gt;): [] {
       <div class="progress">Parte B · Bloco 7</div>
       <div class="frame">
         <div class="eyebrow">Do contrato à rede</div>
-        <h2 class="head" style="margin-top:10px">O deploy do contrato</h2>
-        <div class="dpipe">
-          <div class="dp-stage"><div class="dp-name">compilar</div></div>
-          <div class="dp-arrow">&rarr;</div>
-          <div class="dp-stage"><div class="dp-name">proof server</div></div>
-          <div class="dp-arrow">&rarr;</div>
-          <div class="dp-stage"><div class="dp-name">faucet (tDUST)</div></div>
-          <div class="dp-arrow">&rarr;</div>
-          <div class="dp-stage out"><div class="dp-name">deploy</div></div>
+        <h2 class="head" style="margin-top:10px">A infra por trás do deploy</h2>
+        <div class="infra-art">
+          <svg viewBox="0 0 1280 480" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <filter id="appglow" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+            </defs>
+            <text x="240" y="48" text-anchor="middle" font-family="Outfit, sans-serif" font-size="21" letter-spacing="3" fill="#5ad1c4">NA SUA MÁQUINA</text>
+            <text x="1040" y="48" text-anchor="middle" font-family="Outfit, sans-serif" font-size="21" letter-spacing="3" fill="#8aa0ff">A TESTNET</text>
+            <g stroke="#5570FF" stroke-width="2.5" opacity="0.5">
+              <line x1="470" y1="208" x2="402" y2="184"/>
+              <line x1="470" y1="312" x2="402" y2="356"/>
+              <line x1="810" y1="208" x2="878" y2="184"/>
+              <line x1="810" y1="312" x2="878" y2="356"/>
+            </g>
+            <g>
+              <rect x="80" y="84" width="320" height="100" rx="14" fill="rgba(90,209,196,0.05)" stroke="rgba(90,209,196,0.32)" stroke-width="1.5"/>
+              <text x="106" y="128" font-family="'JetBrains Mono', monospace" font-size="27" fill="#5ad1c4">proof server</text>
+              <text x="106" y="160" font-family="Outfit, sans-serif" font-size="19" fill="rgba(255,255,255,0.56)">gera as provas ZK</text>
+            </g>
+            <g>
+              <rect x="80" y="356" width="320" height="100" rx="14" fill="rgba(90,209,196,0.05)" stroke="rgba(90,209,196,0.32)" stroke-width="1.5"/>
+              <text x="106" y="400" font-family="'JetBrains Mono', monospace" font-size="27" fill="#5ad1c4">wallet</text>
+              <text x="106" y="432" font-family="Outfit, sans-serif" font-size="19" fill="rgba(255,255,255,0.56)">a chave, o DUST, assina</text>
+            </g>
+            <g>
+              <rect x="880" y="84" width="320" height="100" rx="14" fill="rgba(85,112,255,0.06)" stroke="rgba(85,112,255,0.34)" stroke-width="1.5"/>
+              <text x="906" y="128" font-family="'JetBrains Mono', monospace" font-size="27" fill="#8aa0ff">node</text>
+              <text x="906" y="160" font-family="Outfit, sans-serif" font-size="19" fill="rgba(255,255,255,0.56)">manda as transações</text>
+            </g>
+            <g>
+              <rect x="880" y="356" width="320" height="100" rx="14" fill="rgba(85,112,255,0.06)" stroke="rgba(85,112,255,0.34)" stroke-width="1.5"/>
+              <text x="906" y="400" font-family="'JetBrains Mono', monospace" font-size="27" fill="#8aa0ff">indexer</text>
+              <text x="906" y="432" font-family="Outfit, sans-serif" font-size="19" fill="rgba(255,255,255,0.56)">lê o estado da chain</text>
+            </g>
+            <g filter="url(#appglow)">
+              <rect x="470" y="200" width="340" height="120" rx="16" fill="rgba(0,0,254,0.16)" stroke="#0000FE" stroke-width="2.5"/>
+            </g>
+            <text x="640" y="252" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="30" fill="#ffffff">seu app</text>
+            <text x="640" y="288" text-anchor="middle" font-family="Outfit, sans-serif" font-size="20" fill="#8aa0ff">CLI ou frontend</text>
+          </svg>
         </div>
-        <p class="small" style="margin-top:30px; color:var(--faint)">o frontend é um segundo deploy, na Vercel.</p>
+        <p class="small" style="margin-top:18px; color:var(--faint)">o app orquestra os 4 pra deployar e usar o contrato; as provas ZK rodam local, no proof server.</p>
       </div>
     </section>
 
@@ -951,6 +987,12 @@ export circuit postNote(content: Opaque&lt;"string"&gt;): [] {
             <div class="res-desc">o programa que nós somos parte</div>
             <div class="res-url">midnight.network/aliit</div>
           </div>
+          <div class="res-row">
+            <div class="res-tick"></div>
+            <div class="res-name">Midnight Expert</div>
+            <div class="res-desc">skills de IA pra Compact (Aaron Bassett)</div>
+            <div class="res-url">github.com/aaronbassett</div>
+          </div>
         </div>
       </div>
     </section>
@@ -1000,6 +1042,7 @@ export circuit postNote(content: Opaque&lt;"string"&gt;): [] {
 <div id="counter"></div>
 <button id="navPrev" class="navbtn" aria-label="slide anterior">&lsaquo;</button>
 <button id="navNext" class="navbtn" aria-label="próximo slide">&rsaquo;</button>
+<button id="fsBtn" class="fsbtn" aria-label="tela cheia" title="Tela cheia (F)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 9 4 4 9 4"/><polyline points="20 9 20 4 15 4"/><polyline points="4 15 4 20 9 20"/><polyline points="20 15 20 20 15 20"/></svg></button>
 
 <!-- syntax highlighter do Compact (próprio, sem lib externa) -->
 <script>
@@ -1069,12 +1112,14 @@ export circuit postNote(content: Opaque&lt;"string"&gt;): [] {
     else if (e.key === 'ArrowLeft' || e.key === 'PageUp') { e.preventDefault(); prev(); }
     else if (e.key === 'Home') { show(0); }
     else if (e.key === 'End') { show(slides.length - 1); }
-    else if (e.key === 'f' || e.key === 'F') { if (document.fullscreenElement) document.exitFullscreen(); else document.documentElement.requestFullscreen(); }
+    else if (e.key === 'f' || e.key === 'F') { toggleFS(); }
   });
   let tsX = null, tsY = null, swiped = false;
   document.getElementById('stage').addEventListener('click', () => { if (swiped) { swiped = false; return; } next(); });
   document.getElementById('navPrev').addEventListener('click', (e) => { e.stopPropagation(); prev(); });
   document.getElementById('navNext').addEventListener('click', (e) => { e.stopPropagation(); next(); });
+  function toggleFS() { if (document.fullscreenElement) document.exitFullscreen(); else document.documentElement.requestFullscreen(); }
+  document.getElementById('fsBtn').addEventListener('click', (e) => { e.stopPropagation(); toggleFS(); });
   window.addEventListener('touchstart', (e) => { const t = e.changedTouches[0]; tsX = t.clientX; tsY = t.clientY; swiped = false; }, { passive: true });
   window.addEventListener('touchend', (e) => {
     if (tsX === null) return;
